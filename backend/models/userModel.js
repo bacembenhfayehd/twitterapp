@@ -53,6 +53,17 @@ const userSchema = new mongoose.Schema({
     },
 
 
+    likedPosts:[
+
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Post",
+            default:[]
+        }
+
+    ],
+
+
     link:{
         type:String,
         default:"",
