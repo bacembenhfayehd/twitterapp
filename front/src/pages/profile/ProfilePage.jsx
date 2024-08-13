@@ -14,7 +14,9 @@ import { MdEdit } from "react-icons/md";
 import boy2 from '../../public/avatars/boy2.png'
 import cover from '../../public/avatars/cover.png'
 
+
 const ProfilePage = () => {
+
 	const [coverImg, setCoverImg] = useState(null);
 	const [profileImg, setProfileImg] = useState(null);
 	const [feedType, setFeedType] = useState("posts");
