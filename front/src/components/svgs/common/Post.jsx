@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {toast} from 'react-hot-toast'
 import LoadingSpinner from './LoadingSpinner'
+import avatar from '../../../public/avatars/avatar-placeholder.png'
 
 import {useQuery,useMutation, useQueryClient} from '@tanstack/react-query'
 
@@ -62,7 +63,7 @@ const Post = ({ post }) => {
 			<div className='flex gap-2 items-start p-4 border-b border-gray-700'>
 				<div className='avatar'>
 					<Link to={`/profile/${postOwner.username}`} className='w-8 rounded-full overflow-hidden'>
-						<img src={postOwner.profileImg || "/avatar-placeholder.png"} />
+						<img src={postOwner.profileImg || avatar} />
 					</Link>
 				</div>
 				<div className='flex flex-col flex-1'>
