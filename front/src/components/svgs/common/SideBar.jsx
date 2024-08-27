@@ -88,7 +88,7 @@ const Sidebar = () => {
             <div className="flex justify-between flex-1">
               <div className="hidden md:block">
                 <p className="text-white font-bold text-sm w-20 truncate">
-                  {authUser?.fullName}
+                  {authUser?.fullname}
                 </p>
                 <p className="text-slate-500 text-sm">@{authUser?.username}</p>
               </div>

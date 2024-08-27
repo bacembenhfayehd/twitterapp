@@ -30,9 +30,8 @@ const postSchema = new mongoose.Schema(
         },
 
         user: {
-          type: mongoose.Schema.Types.ObjectId,
+          type: mongoose.Schema.Types.ObjectId, // Correction ici
           ref: "User",
-          required: true,
         },
       },
     ],
