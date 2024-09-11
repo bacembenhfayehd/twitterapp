@@ -1,3 +1,4 @@
+const path = require('path');
 import dotenv from "dotenv";
 import { v2 as cloudinary } from "cloudinary";
 dotenv.config();
@@ -18,7 +19,7 @@ import connectMongodb from "./db/connectMongodb.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
-
+const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000;
 console.log(process.env.MONGO_URI);
 
@@ -29,6 +30,12 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/notifications", notificationRoutes);
+
+if(process.env.NODE_ENV === 'production'){
+  app.use('*' , (req,res) => {
+    res.sendFile(path.resolve(__dirname,'front','dist','index.html'))
+  })
+}
 
 app.listen(PORT, () => {
   console.log(`server is running on port :${PORT}`);
