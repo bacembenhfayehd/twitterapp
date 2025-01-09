@@ -1,4 +1,4 @@
-const path = require('path');
+import path from "path";
 import dotenv from "dotenv";
 import { v2 as cloudinary } from "cloudinary";
 dotenv.config();
@@ -32,7 +32,9 @@ app.use("/api/posts", postRoutes);
 app.use("/api/notifications", notificationRoutes);
 
 if(process.env.NODE_ENV === 'production'){
-  app.use('*' , (req,res) => {
+  app.use(express.static(path.join(__dirname,'/front/dist')))
+
+  app.get('*',(req,res) => {
     res.sendFile(path.resolve(__dirname,'front','dist','index.html'))
   })
 }

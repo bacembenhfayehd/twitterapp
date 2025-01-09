@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev": " cross-env NODE_ENV=development nodemon backend/index.js",
-    "start": "cross-env NODE_ENV=production node backend/index.js",
-    "build": "npm install && npm install --prefix front && npm run build --prefix front"
-  },
+ "scripts": {
+  "dev": "cross-env NODE_ENV=development nodemon backend/index.js",
+  "start": "cross-env NODE_ENV=production node backend/index.js",
+  "build": "npm install && npm install --prefix front && npm run build --prefix front"
+},
   "keywords": [],
   "author": "",
   "type": "module",
